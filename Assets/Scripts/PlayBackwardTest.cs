@@ -12,7 +12,7 @@ public class PlayBackwardTest : MonoBehaviour
     public void Play()
     {
         StopBackward();
-        var ps = GetComponentInChildren<ParticleSystem>();
+        var ps = GetComponent<ParticleSystem>();
         ps.Stop();
         ps.Clear();
         ps.Play();
@@ -21,7 +21,7 @@ public class PlayBackwardTest : MonoBehaviour
     public void PlayBackward()
     {
         StopBackward();
-        var ps = GetComponentInChildren<ParticleSystem>();
+        var ps = GetComponent<ParticleSystem>();
         m_CoPlayBackward = ps.PlayBackward(this); // = StartCoroutine(ps.CoPlayBackward());
     }
 

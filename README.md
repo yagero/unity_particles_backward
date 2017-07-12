@@ -11,7 +11,7 @@ public class Test : MonoBehaviour
 {
     public void PlayBackward()
     {
-        var ps = GetComponentInChildren<ParticleSystem>();
+        var ps = GetComponent<ParticleSystem>();
         ps.PlayBackward(this);
         // or use StartCoroutine(ps.CoPlayBackward());
     }
