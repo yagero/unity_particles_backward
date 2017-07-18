@@ -7,6 +7,7 @@ using UnityEditor;
 [RequireComponent(typeof(ParticleSystem))]
 public class PlayBackwardTest : MonoBehaviour
 {
+    [SerializeField] bool withChildren = true;
     Coroutine m_CoPlayBackward = null;
 
     public void Play()
@@ -15,14 +16,14 @@ public class PlayBackwardTest : MonoBehaviour
         var ps = GetComponent<ParticleSystem>();
         ps.Stop();
         ps.Clear();
-        ps.Play();
+        ps.Play(withChildren);
     }
 
     public void PlayBackward()
     {
         StopBackward();
         var ps = GetComponent<ParticleSystem>();
-        m_CoPlayBackward = ps.PlayBackward(this); // = StartCoroutine(ps.CoPlayBackward());
+        m_CoPlayBackward = ps.PlayBackward(this, withChildren); // = StartCoroutine(ps.CoPlayBackward(withChildren));
     }
 
     void StopBackward()

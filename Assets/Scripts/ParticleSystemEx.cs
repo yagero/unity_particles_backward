@@ -33,7 +33,7 @@ public static class ParticleSystemEx
         float time = maxLifeTime;
         while (time > 0f)
         {
-            self.Simulate(time, true);
+            self.Simulate(time, withChildren, true);
             time -= Time.deltaTime;
             yield return null;
         }
