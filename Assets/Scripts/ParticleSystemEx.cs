@@ -38,7 +38,7 @@ public static class ParticleSystemEx
             yield return null;
         }
 
-        self.Simulate(0f, true, true);
+        self.Simulate(0f, withChildren, true);
     }
 
     public static void SetUseAutoRandomSeed(this ParticleSystem self, bool value, bool withChildren = true)
